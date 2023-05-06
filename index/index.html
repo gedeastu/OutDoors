@@ -103,17 +103,40 @@
       }
     </style>
     
-    <title>MyAdmin - Index Page</title>
+    <title>TravelGo - Index Page</title>
 </head>
 <body>
 <!-- References Website: https://pin.it/4FyFR7c -->
-<div id="container">
-    <header id="header" class="sm:grid-cols-3 sm:flex">
-      <div id="logo"></div>
-      <ul id="navbar"></ul>
-      <div id="btn_login"></div>
+<div id="container" class="bg-black w-full h-[100vh]">
+    <header id="header" class="sm:grid-cols-3 sm:flex sm:justify-around h-24 items-center">
+      <div id="logo" class="w-max my-auto">
+        <img src="../img/logo.svg" alt="" class="">
+      </div>
+      <ul id="navbar" class="text-white flex gap-5">
+        <li><a href="">Home</a></li>
+        <li><a href="">Package</a></li>
+        <li class=""><button class="flex">Accomodation <img src="../img/iconDropdown.svg" alt="" class="pl-1 my-auto"></button></li>
+        <li><a href="">Contact Us</a></li>
+      </ul>
+      <div id="btn_login" class="bg-[#FF5733] w-max h-max text-white py-2 px-5 rounded-sm">Login</div>
     </header>
-    <main></main>
+    <main>
+      <div id="carousel" class="mx-auto w-max">
+        <div id="pict1">
+          <div id="contentPict1" style="background-image: url('../img/pict01.svg');" class="grid-cols-2 flex w-[80rem] bg-cover bg-center h-[35rem] text-white">
+            <div id="namePlace">
+              <h1 class="">POON HILL</h1>
+              <h3>Ghoda Pani, Nepal</h3>
+            </div>
+            <div id="btn_book">
+              <button>Book Now</button>
+            </div>
+          </div>
+        </div>
+        <div id="pict2"></div>
+        <div id="pict3"></div>
+      </div>
+    </main>
     <footer></footer>
 </div>
 <!-- aosJS -->
