@@ -121,20 +121,121 @@
       <div id="btn_login" class="bg-[#FF5733] w-max h-max text-white py-2 px-5 rounded-sm">Login</div>
     </header>
     <main>
-      <div id="carousel" class="mx-auto w-max">
-        <div id="pict1">
-          <div id="contentPict1" style="background-image: url('../img/pict01.svg');" class="grid-cols-2 flex w-[80rem] bg-cover bg-center h-[35rem] text-white">
-            <div id="namePlace">
-              <h1 class="">POON HILL</h1>
-              <h3>Ghoda Pani, Nepal</h3>
+      <div id="Carousel" class="relative w-[80rem] mx-auto" data-carousel="slide">
+        <!-- Carousel wrapper -->
+        <div class="relative h-56 overflow-hidden rounded-lg md:h-[30rem]">
+             <!-- Item 1 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <div id="pict1" style="background-image: url('../img/pict01.svg');" class="bg-cover bg-center w-[80rem] h-[30rem] relative">
+                <div id="contentPict1" class="grid-cols-2 flex px-20 text-white pt-52 justify-between absolute w-full h-full top-[3rem] items-center bg-gradient-to-t from-black/100 to-black/0">
+                  <div id="namePlace" class="">
+                    <h1 class="text-4xl"><span class="font-bold">POON</span> HILL</h1>
+                    <h3>Ghoda Pani, Nepal</h3>
+                  </div>
+                  <div id="btn_book" class="border border-white p-3">
+                    <button>Book Now</button>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div id="btn_book">
-              <button>Book Now</button>
+            <!-- Item 2 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <div id="pict2" style="background-image: url('../img/blackDesert.svg');" class="bg-cover bg-center w-[80rem] h-[30rem] relative">
+                <div id="contentPict2" class="grid-cols-2 flex px-20 text-white pt-52 justify-between absolute w-full h-full top-[3rem] items-center bg-gradient-to-t from-black/100 to-black/0">
+                  <div id="namePlace" class="">
+                    <h1 class="text-4xl"><span class="font-bold">BLACK</span> DESERT</h1>
+                    <h3>Gogolo, Gotham</h3>
+                  </div>
+                  <div id="btn_book" class="border border-white p-3">
+                    <button>Book Now</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <div id="pict3" style="background-image: url('../img/nusaPenida.png');" class="bg-cover bg-center w-[80rem] h-[30rem] relative">
+                <div id="contentPict3" class="grid-cols-2 flex px-20 text-white pt-52 justify-between absolute w-full h-full top-[3rem] items-center bg-gradient-to-t from-black/100 to-black/0">
+                  <div id="namePlace" class="">
+                    <h1 class="text-4xl"><span class="font-bold">NUSA</span> PENIDA</h1>
+                    <h3>Bali, Indonesia</h3>
+                  </div>
+                  <div id="btn_book" class="border border-white p-3">
+                    <button>Book Now</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Item 4 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <div id="pict4" style="background-image: url('../img/nusaPenida.png');" class="bg-cover bg-center w-[80rem] h-[30rem] relative">
+                <div id="contentPict4" class="grid-cols-2 flex px-20 text-white pt-52 justify-between absolute w-full h-full top-[3rem] items-center bg-gradient-to-t from-black/100 to-black/0">
+                  <div id="namePlace" class="">
+                    <h1 class="text-4xl"><span class="font-bold">NUSA</span> PENIDA</h1>
+                    <h3>Bali, Indonesia</h3>
+                  </div>
+                  <div id="btn_book" class="border border-white p-3">
+                    <button>Book Now</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+          <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10">
+              <img src="../img/previous.svg" alt="">
+              <span class="sr-only">Previous</span>
+          </span>
+      </button>
+      <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+          <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10">
+              <img src="../img/next.svg" alt="">
+              <span class="sr-only">Next</span>
+          </span>
+      </button>
+      </div>
+      <div id="order" class="grid-rows-3 w-[45rem] mx-auto bg-[#1A1A1A] p-10 my-10">
+        <div id="category" class="grid-cols-2 flex gap-5">
+          <button id="flights" class="grid-cols-2 w-40 h-16 flex items-center border border-white justify-center relative gap-3 focus:bg-[#FF5733] focus:transition">
+            <img src="../img/Iconsax/Linear/plane.svg" alt="" class="w-10">
+            <p class="text-white">Flights</p>
+          </button>
+          <button id="hotels" class="grid-cols-2 w-40 h-16 flex items-center border border-white justify-center relative gap-3 focus:bg-[#FF5733] focus:transition">
+            <img src="../img/bed.svg" alt="">
+            <p class="text-white">Hotels</p>
+          </button>
+          <div id="hotels" class="grid-cols-2"></div>
+        </div>
+        <div id="form">
+          <div for="#flights" class="grid-rows-2">
+            <div id="DestinationAndNumber" class="grid-cols-2">
+              <div id="destination" class="grid-cols-2 flex">
+                <div id="From" class="relative flex w-40">
+                  <p class="absolute top-1/2 bottom-1/2 w-max text-white">From</p>
+                  <select name="" id="" class="pl-20 bg-[#252525] w-full">
+                    <option value="" disabled>Choice Here</option>
+                    <option value="">Denpasar</option>
+                    <option value="">Jakarta</option>
+                    <option value="">Makassar</option>
+                    <option value="">Flores</option>
+                  </select>
+                </div>
+                <div id="To"></div>
+              </div>
+              <div id="numberPassenger">
+                <p>No. of Passengers</p>
+                <input type="number">
+              </div>
+            </div>
+            <div id="dateAndClass" class="grid-cols-2">
+
             </div>
           </div>
+          <div for="#hotels">
+
+          </div>
         </div>
-        <div id="pict2"></div>
-        <div id="pict3"></div>
+        <div id="btn_bookNow"></div>
       </div>
     </main>
     <footer></footer>
