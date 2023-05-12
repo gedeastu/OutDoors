@@ -79,6 +79,26 @@
         theme: {
           extend: {
             colors: {},
+            keyframes: {
+              /*AnimationName: {
+                '0%, 100%': { transform: 'rotate(-3deg)' },
+                '50%': { transform: 'rotate(3deg)' },
+              }*/
+              infiniteSlide :{
+                '0%':{
+                  transform : 'translateX(0)'
+                },
+                '50%':{
+                  transform : 'translateX(-50%)'
+                },
+                '100%':{
+                  transform : 'translateX{-100%}'
+                },
+              }
+            },
+            animation: {
+              'infinite-slide':'InfiniteSlide 40s linear infinite', 
+            }
           },
         },
       };
@@ -107,7 +127,8 @@
 </head>
 <body>
 <!-- References Website: https://pin.it/4FyFR7c -->
-<div id="container" class="bg-black w-full h-[100vh] grid-rows-3">
+<div id="container" class="container mx-auto bg-black relative max-w-full grid-rows-3 ">
+  
     <header id="header" class="sm:grid-cols-3 sm:flex sm:justify-around h-24 items-center">
       <div id="logo" class="w-max my-auto">
         <img src="../img/logo.svg" alt="" class="">
@@ -120,7 +141,7 @@
       </ul>
       <div id="btn_login" class="bg-[#FF5733] w-max h-max text-white py-2 px-5 rounded-sm">Login</div>
     </header>
-    <main>
+    <main class="grid-rows-6 h-full">
       <div id="Carousel" class="relative w-[80rem] mx-auto" data-carousel="slide">
         <!-- Carousel wrapper -->
         <div class="relative h-56 overflow-hidden rounded-lg md:h-[30rem]">
@@ -194,9 +215,9 @@
           </span>
       </button>
       </div>
-      <div id="order" class="grid-rows-3 w-[45rem] mx-auto bg-[#1A1A1A] p-10 my-10">
+      <div id="Order" class="grid-rows-3 w-[45rem] mx-auto bg-[#1A1A1A] p-10 mt-10">
         <div id="category" class="grid-cols-2 flex gap-5">
-          <button id="flights" class="grid-cols-2 w-40 h-16 flex items-center border border-white justify-center relative gap-3 focus:bg-[#FF5733] focus:transition">
+          <button for="#flights" class="grid-cols-2 w-40 h-16 flex items-center border border-white justify-center relative gap-3 focus:bg-[#FF5733] focus:transition">
             <img src="../img/Iconsax/Linear/plane.svg" alt="" class="w-10">
             <p class="text-white">Flights</p>
           </button>
@@ -206,39 +227,92 @@
           </button>
           <div id="hotels" class="grid-cols-2"></div>
         </div>
-        <div id="form">
-          <div for="#flights" class="grid-rows-2">
-            <div id="DestinationAndNumber" class="grid-cols-2">
-              <div id="destination" class="grid-cols-2 flex">
-                <div id="From" class="relative flex w-40">
-                  <p class="absolute top-1/2 bottom-1/2 w-max text-white">From</p>
-                  <select name="" id="" class="pl-20 bg-[#252525] w-full">
-                    <option value="" disabled>Choice Here</option>
+        <div id="form" class="my-5">
+          <div id="flights" class="grid-rows-2">
+            <div id="DestinationAndNumber" class="grid-cols-3 flex items-center justify-between">
+              <div id="From" class="relative flex w-48 h-max">
+                  <p class="absolute top-2 text-white left-3">From :</p>
+                  <select name="" id="" class="pl-20 bg-[#252525] w-full h-full text-white focus:border-none">
+                    <option value="" selected>Tap Here</option>
                     <option value="">Denpasar</option>
                     <option value="">Jakarta</option>
                     <option value="">Makassar</option>
                     <option value="">Flores</option>
                   </select>
-                </div>
-                <div id="To"></div>
               </div>
-              <div id="numberPassenger">
-                <p>No. of Passengers</p>
-                <input type="number">
+              <div id="To" class="relative flex w-48 h-max">
+                  <p class="absolute top-2 text-white left-3">To :</p>
+                  <select name="" id="" class="pl-20 bg-[#252525] w-full h-full text-white focus:border-none">
+                    <option value="" selected class="text-opacity-50">Tap Here</option>
+                    <option value="">Denpasar</option>
+                    <option value="">Jakarta</option>
+                    <option value="">Makassar</option>
+                    <option value="">Flores</option>
+                  </select>
+              </div>
+              <div id="numberPassenger" class="relative text-white h-max">
+                <p class="absolute bottom-12">No. Of Passenger</p>
+                <input type="number" class="bg-[#252525]">
               </div>
             </div>
-            <div id="dateAndClass" class="grid-cols-2">
-
+            <div id="dateAndClass" class="grid-cols-2 pt-5 flex text-white justify-between">
+              <div id="date" class="">
+                <p class="pb-1">Departure Date</p>
+                <div class="relative w-max">
+                  <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <img src="../img/Iconsax/Linear/calendaredit.png" alt="">
+                  </div>
+                  <input datepicker type="text" class="text-white border border-gray-500 text-sm h-11 focus:ring-blue-500 pl-10 bg-[#252525]" placeholder="Select date">
+                </div>  
+              </div>
+              <div id="seatClass">
+                <p class="pb-1">Seat Class</p>
+                <div id="To" class="relative flex w-72 h-max">
+                  <select name="" id="" class="bg-[#252525] w-full h-full text-white focus:border-none">
+                    <option value="" selected>Choice Here</option>
+                    <option value="">Economy</option>
+                    <option value="">Bussiness</option>
+                  </select>
+              </div>
+              </div>
             </div>
           </div>
           <div for="#hotels">
-
+        
           </div>
         </div>
-        <div id="btn_bookNow"></div>
+        <div id="btn_bookNow" class="w-[40rem] border border-white text-white p-3 text-center">
+          <p>Book Now</p>
+        </div>
+      </div>
+      <div id="Explore" class="w-[100rem] mx-auto">
+        <div id="titleExplore" class="text-white w-96 ml-40">
+          <h2 class="font-bold text-3xl"><span class="text-red-500">Explore</span> Place Around The World</h2>
+        </div>
+        <div id="ExploreItem" class="">
+          <div id="slider">
+            <div id="slide_track" class="flex justify-between">
+              <div id="slide_item">
+                <img src="../img/1.svg" alt="">
+              </div>
+              <div id="slide_item">
+                <img src="../img/2.png" alt="">
+              </div>
+              <div id="slide_item">
+                <img src="../img/3.png" alt="">
+              </div>
+              <div id="slide_item">
+                <img src="../img/4.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
-    <footer></footer>
+    <footer class="w-full bg-[#1A1A1A]">
+      <img src="../img/logo.svg" alt="">
+    </footer>
+  
 </div>
 <!-- aosJS -->
 <script>
